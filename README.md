@@ -13,8 +13,9 @@
   + 再次推送仓库`git push`（将本地仓库的个人分支推送到远端仓库的个人分支）
   + 在Github上通过`pull request`将个人分支的修改更新到主分支
   
-  ## Reference
+
+## Reference
   
-  [https://www.kaggle.com/friedchips/how-to-reduce-the-training-data-to-400mb](https://www.kaggle.com/friedchips/how-to-reduce-the-training-data-to-400mb)
+[How to reduce the training data to 400mb【Kaggle kernel】](https://www.kaggle.com/friedchips/how-to-reduce-the-training-data-to-400mb)
   
-  [https://blog.csdn.net/song430/article/details/89312979](https://blog.csdn.net/song430/article/details/89312979)
+[题目分析 (lightGBM and xgboost)【CSDN】](https://blog.csdn.net/song430/article/details/89312979)
