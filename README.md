@@ -15,7 +15,12 @@
   
 
 ## Reference
-  
+
 [How to reduce the training data to 400mb【Kaggle kernel】](https://www.kaggle.com/friedchips/how-to-reduce-the-training-data-to-400mb)
-  
+
 [题目分析 (lightGBM and xgboost)【CSDN】](https://blog.csdn.net/song430/article/details/89312979)
+
+[RNN starter for huge time series](https://www.kaggle.com/mayer79/rnn-starter-for-huge-time-series)
+
+[Earthquakes FE. More features and samples](https://www.kaggle.com/artgor/earthquakes-fe-more-features-and-samples)
+
