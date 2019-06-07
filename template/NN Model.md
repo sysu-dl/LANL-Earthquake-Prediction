@@ -31,8 +31,9 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 
 ### More
 
-| Date     | Features | Indexs              | Parameters | Datasets | Model | Score |
-| -------- | -------- | ------------------- | ---------- | -------- | ----- | ----- |
-| 2019.6.5 |          | random_index        |            |          | LSTM  | 1.52  |
-| 2019.6.6 |          | random_index_serial |            |          | LSTM  | 1.48  |
+| Date     | Features | Indexs              | Parameters     | Datasets | Model | Score |
+| -------- | -------- | ------------------- | -------------- | -------- | ----- | ----- |
+| 2019.6.5 |          | random_index        |                |          | LSTM  | 1.52  |
+| 2019.6.6 |          | random_index_serial |                |          | LSTM  | 1.48  |
+| 2019.6.7 |          | random_index_serial | n_epochs = 100 |          | LSTM  | 1.59  |
 
