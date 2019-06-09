@@ -78,3 +78,4 @@ plt.legend(['Train', 'Test'], loc='upper left')
 plt.show()
 ```
 
+add a new feature (not sure whether it works)
