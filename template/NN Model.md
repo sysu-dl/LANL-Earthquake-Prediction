@@ -31,15 +31,19 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 
 ### More
 
-| Date      | Features   | Indexs              | Parameters                           | Datasets   | Model | Score |
-| --------- | ---------- | ------------------- | ------------------------------------ | ---------- | ----- | ----- |
-| 2019.6.5  |            | random_index        |                                      |            | LSTM  | 1.52  |
-| 2019.6.6  |            | random_index_serial |                                      |            | LSTM  | 1.48  |
-| 2019.6.7  |            | random_index_serial | n_epochs = 100                       |            | LSTM  | 1.59  |
-| 2019.6.9  |            | random_index_serial | ........                             | ....       | GRU   | 1.53  |
-| 2019.6.10 |            | random_index_serial | batch_size = 64 learning_rate = 5e-3 |            | LSTM  | 1.65  |
-| 2019.6.12 |            | random_index_serial |                                      | train=[1,] | LSTM  | 1.54  |
-| 2019.6.14 | feature_16 | random_index_serial |                                      | train=[1,] | LSTM  | 1.51  |
+| Date      | Features   | Indexs              | Parameters                           | Datasets   |   Model   | Public Score | Private Score |
+| --------- | ---------- | ------------------- | ------------------------------------ | ---------- | --------- | ------------ | ------------- |
+| 2019.6.5  |            | random_index        |                                      |            |   LSTM    |     1.52     |               |
+| 2019.6.6  |            | random_index_serial |                                      |            |   LSTM    |     1.48     |               |
+| 2019.6.7  |            | random_index_serial | n_epochs = 100                       |            |   LSTM    |     1.59     |               |
+| 2019.6.9  |            | random_index_serial | ........                             | ....       |   GRU     |     1.53     |               |
+| 2019.6.9  |            | random_index_serial | lr=0.01*(0.2^n)                      | ....       | GRU+LSTM  |    1.50224   |    2.56412    |
+| 2019.6.10 |            | random_index_serial | batch_size = 64 learning_rate = 5e-3 |            |   LSTM    |     1.65     |               |
+| 2019.6.11 | feature_15 | random_index_serial |                                      |            |   LSTM    |    1.50047   |    2.74354    |
+| 2019.6.12 |            | random_index_serial |                                      | train=[1,] |   LSTM    |     1.54     |               |
+| 2019.6.13 | feature_15 | random_index_serial |
+| 2019.6.14 | feature_16 | random_index_serial |                                      | train=[1,] |   LSTM    |     1.51     |               |
+| 2019.6.15 |            |                     | Use 1st team submit                  |            | Use 1st team's submit |     60       |     .....     |
 
 
 #### Further details
