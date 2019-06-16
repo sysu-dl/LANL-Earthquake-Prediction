@@ -40,6 +40,7 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 | 2019.6.10 |            | random_index_serial | batch_size = 64 learning_rate = 5e-3 |            | LSTM  | 1.65  |
 | 2019.6.12 |            | random_index_serial |                                      | train=[1,] | LSTM  | 1.54  |
 | 2019.6.14 | feature_16 | random_index_serial |                                      | train=[1,] | LSTM  | 1.51  |
+| 2019.6.16 | feature_16 | random_index_serial |                                      | train=[1,] | LSTM  | 1.53  |
 
 
 #### Further details
