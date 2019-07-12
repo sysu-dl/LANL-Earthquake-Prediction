@@ -39,12 +39,11 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 | 2019.6.9  |            | random_index_serial | ........                             | ....       |   GRU     |     1.53     |               |
 | 2019.6.9  |            | random_index_serial | lr=0.01*(0.2^n)                      | ....       | GRU+LSTM  |    1.50224   |    2.56412    |
 | 2019.6.10 |            | random_index_serial | batch_size = 64 learning_rate = 5e-3 |            |   LSTM    |     1.65     |               |
-| 2019.6.11 | feature_15 | random_index_serial |                                      |            |   LSTM    |    1.50047   |    2.74354    |
+| 2019.6.1 | feature_15 | random_index_serial |                                      |            |   LSTM    |    1.50047   |    2.74354    |
 | 2019.6.12 |            | random_index_serial |                                      | train=[1,] |   LSTM    |     1.54     |               |
-| 2019.6.13 | feature_15 | random_index_serial |
+| 2019.6.13 | feature_15 | random_index_serial ||||||
 | 2019.6.14 | feature_16 | random_index_serial |                                      | train=[1,] |   LSTM    |     1.51     |               |
 | 2019.6.15 |            |                     | Use 1st team submit                  |            | Use 1st team's submit |     60       |     .....     |
-
 
 #### Further details
 
@@ -86,3 +85,17 @@ plt.show()
 ```
 
 add a new feature (not sure whether it works)
+
+
+
+## 个人总结
+
+- 黄嘉杰
+  - 在调参时，因为是在kaggle上跑的，每天只能交两次，效率不是很高
+  - 另外感觉是因为调用了Keras的API，运行的结果有一定的随机性，我曾试过用同一份代码跑四次，每次的结果都不一样，最低的是1.51，最高的是1.65，大大增加了调参的难度
+  - 最开始先简单地将n_epochs调大，试了几次发现效果反而更差了，因为不能确定是不是随机性导致的，后面没有继续调下去，使用了一个比较小的n_epochs
+  - 对于训练集要不要包含验证集的问题，我更倾向于不包含，从结果上对比是差不多的
+  - 对于RNN、GRU、LSTM的对比，从结果来看LSTM相对会更好一点，感觉在处理时间序列的问题上LSTM会更有优势
+  - 对于特征的提取，还是用的基本的四种均值、标准差、最大值、最小值，曾经考虑了一些拓展的特征，比如拟合曲线的斜率、大于某个阈值的信号量的百分比等，但是没有实现
+  - 还考虑过用CNN做，一种思路是将这些信号随机分段，然后与验证集做匹配；另外一种思路是先用CNN提取特征，再用RNN/GRU/LSTM来训练；因为看其他Kernal里的分数还不如我们现在做的，所以也没有继续做
+
