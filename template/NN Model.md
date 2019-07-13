@@ -23,16 +23,16 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 + train = [0, ]
 + validation = [0, ]
 
-**Model** - GRU
+**Model** - LSTM
 
-**Score** - 1.55
+**Score** - 1.48
 
 
 
 ### More
 
-| Date     | Features | Indexs              | Parameters | Datasets | Model | Score |
-| -------- | -------- | ------------------- | ---------- | -------- | ----- | ----- |
-| 2019.6.5 |          | random_index        |            |          | LSTM  | 1.52  |
-| 2019.6.6 |          | random_index_serial |            |          | LSTM  | 1.48  |
+| Date     | Features | Indexs       | Parameters | Datasets | Model | Score |
+| -------- | -------- | ------------ | ---------- | -------- | ----- | ----- |
+| 2019.6.5 |          | random_index |            |          |       | 1.52  |
+| 2019.6.6 |          |              |            |          |       | 1.48  |
 
