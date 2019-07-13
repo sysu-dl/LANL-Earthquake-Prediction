@@ -23,14 +23,13 @@ Template Kernel：<https://www.kaggle.com/fantasticgold/nn-model?scriptVersionId
 + train = [0, ]
 + validation = [0, ]
 
-**Model** - GRU
+**Model** - LSTM
 
-**Score** - 1.55
+**Score** - 1.48
 
 
 
 ### More
-
 | Date      | Features   | Indexs              | Parameters                           | Datasets   |   Model   | Public Score | Private Score |
 | --------- | ---------- | ------------------- | ------------------------------------ | ---------- | --------- | ------------ | ------------- |
 | 2019.6.5  |            | random_index        |                                      |            |   LSTM    |     1.52     |               |
@@ -98,4 +97,5 @@ add a new feature (not sure whether it works)
   - 对于RNN、GRU、LSTM的对比，从结果来看LSTM相对会更好一点，感觉在处理时间序列的问题上LSTM会更有优势
   - 对于特征的提取，还是用的基本的四种均值、标准差、最大值、最小值，曾经考虑了一些拓展的特征，比如拟合曲线的斜率、大于某个阈值的信号量的百分比等，但是没有实现
   - 还考虑过用CNN做，一种思路是将这些信号随机分段，然后与验证集做匹配；另外一种思路是先用CNN提取特征，再用RNN/GRU/LSTM来训练；因为看其他Kernal里的分数还不如我们现在做的，所以也没有继续做
+
 
