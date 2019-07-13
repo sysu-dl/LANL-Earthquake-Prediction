@@ -89,7 +89,7 @@ add a new feature (not sure whether it works)
 
 ## 个人总结
 
-- 黄嘉杰
+- Boooooby
   - 在调参时，因为是在kaggle上跑的，每天只能交两次，效率不是很高
   - 另外感觉是因为调用了Keras的API，运行的结果有一定的随机性，我曾试过用同一份代码跑四次，每次的结果都不一样，最低的是1.51，最高的是1.65，大大增加了调参的难度
   - 最开始先简单地将n_epochs调大，试了几次发现效果反而更差了，因为不能确定是不是随机性导致的，后面没有继续调下去，使用了一个比较小的n_epochs
@@ -99,3 +99,49 @@ add a new feature (not sure whether it works)
   - 还考虑过用CNN做，一种思路是将这些信号随机分段，然后与验证集做匹配；另外一种思路是先用CNN提取特征，再用RNN/GRU/LSTM来训练；因为看其他Kernal里的分数还不如我们现在做的，所以也没有继续做
 
 
+* Gongzq5
+
+1. 调参，每天2次限制嘛，尝试着调了调LR和epoch，调不动了，玄学
+
+   * 用了个动态调整的函数，`ReduceLROnPlateau(monitor='loss', factor=0.2, patience=5, min_lr=10e-8)]`
+
+2. 尝试着使用了新的特征：斜率，感觉还是有一点用的，但是用处不是很大，分数提高了0.02；
+
+3. 添加网络结构，使用两个GRU（加了一些图）
+
+   * ```python
+     model.add(CuDNNGRU(48, input_shape=(None, n_features), return_sequences=True))
+     model.add(CuDNNGRU(48, input_shape=(None, 48)))
+     model.add(Dense(10, activation="relu"))
+     model.add(Dense(1))
+     model.compile(optimizer=adam(lr=learning_rate), loss="mae")
+     ```
+
+4. 用了第一名的网络结构
+
+   * ```python
+     x = BatchNormalization()(inp)
+     x = LSTM(128,return_sequences=True)(x) # LSTM as first layer performed better than Dense.
+     x = Convolution1D(128, (2),activation='relu', padding="same")(x)
+     x = Convolution1D(84, (2),activation='relu', padding="same")(x)
+     x = Convolution1D(64, (2),activation='relu', padding="same")(x)
+     
+     x = Flatten()(x)
+     
+     x = Dense(64, activation="relu")(x)
+     x = Dense(32, activation="relu")(x)
+     
+     #outputs
+     ttf = Dense(1, activation='relu',name='regressor')(x) # Time to Failure
+     tsf = Dense(1)(x) # Time Since Failure
+     classifier = Dense(1, activation='sigmoid')(x) # Binary for TTF<0.5 seconds
+     
+     model = models.Model(inputs=inp, outputs=[ttf,tsf,classifier])    
+     opt = optimizers.Nadam(lr=0.008)
+     ```
+
+   * 有用吗，其实没用：），鬼知道他们还调了什么，这个模型MAE达到了60+……
+
+   * 但是网络结构不错，3个Conv卷积层用来提取特征
+
+   
